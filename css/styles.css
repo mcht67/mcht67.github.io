@@ -127,14 +127,22 @@
 
 html * {
   font-family: Futura_Book;
-  text-transform: uppercase;
   color: white;
+  /*text-transform: uppercase;
+  */
 }
 
 body {
   padding: 0;
   margin: 0;
   background-color: black;
+  /*background-color: #9866fa;
+  background-color: #10091f;
+  background-color: #114d57;*/
+}
+
+div {
+    font-size: 1.3rem;
 }
 
 h1 {
@@ -184,6 +192,7 @@ a.anchor {
       font-size: 16px;
       margin: 4px 2px;
       border-radius: 4px;
+      font-size: 1.5rem;
     }
 
 
@@ -326,6 +335,10 @@ input.ticket-button {
 
 .konzept {
     text-align: center;
+}
+
+p.konzept {
+    font-size: 1.5rem;
 }
 
 /* music */
@@ -514,7 +527,7 @@ p.imp {
   text-align: center;
 }
 
-/* faw accordion */
+/* faq accordion */
 .accordion-container h1{
   color: #fff;
   text-align: center;
@@ -553,4 +566,5 @@ details[open] summary:after{
 
 details[open] div{
   padding: .5em 1em;
+  font-size: 1.3rem;
 }
