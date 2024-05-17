@@ -2,7 +2,7 @@
 
 /* Media Queries */
 /* laptop layout */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 840px) {
   html {
     scroll-padding-top: 63px
   }
@@ -31,34 +31,9 @@
   }*/
 }
 
-@media only screen and (min-width: 900px) {
-  .event-detail {
-  width: 175px;
-}
-  .event-subitem {
-    padding: 20px 15px 20px;
-  }
-}
-@media only screen and (max-width: 900px) {
-    .event-detail {
-    width: 120px;
-  }
-  .event-subitem {
-    padding: 15px 15px 15px;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .event-detail {
-  width: 120px;
-}
-  .event-subitem {
-    padding: 5px 15px 5px;
-  }
-}
 
 /* mobile layout */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 840px) {
   html {
     scroll-padding-top: 189.6px
   }
@@ -68,7 +43,7 @@
     font-size: 1.5rem;
   }
   nav {
-    height: 45px;
+    height: 50px;
   }
   .nav-list {
     display: none;
@@ -90,15 +65,8 @@
   }
   /*
   .home-wrapper {
-      margin-top: 45px;
+      margin-top: 50px;
   }*/
-  .event-detail {
-  width: 100px;
-}
-  .event-subitem {
-    padding: 5px 15px 5px;
-  }
-  
 }
 
 /* Fonts */
@@ -128,17 +96,12 @@
 html * {
   font-family: Futura_Book;
   color: white;
-  /*text-transform: uppercase;
-  */
 }
 
 body {
   padding: 0;
   margin: 0;
   background-color: black;
-  /*background-color: #9866fa;
-  background-color: #10091f;
-  background-color: #114d57;*/
 }
 
 div {
@@ -175,12 +138,6 @@ a.anchor {
     visibility: hidden;
 }
 
-.hamburger_icon {
-  stroke: white;
-  fill: white;
-}
-
-
 .button {
       background-color: #303030;
       border: none;
@@ -206,10 +163,15 @@ nav {
   z-index: 2;
 }
 
+.hamburger_icon {
+  stroke: white;
+  fill: white;
+}
+
 .nav_toggle {
   position: absolute;
   right: 0;
-  margin: 10px;
+  margin: 5px 20px;
   cursor: pointer;
 }
 .nav_checkbox {
@@ -231,6 +193,7 @@ nav {
   align-items: center;
   display: none;
   padding: 10px 0 10px;
+  border-bottom: 1px solid gray;
 }
 
 ul.nav-list li {
@@ -240,30 +203,6 @@ ul.nav-list li {
 
 ul.nav-list li a {
   padding: 25px 30px 10px;
-}
-
-/* socials */
-.socials {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 3;
-}
-
-ul.socials-list {
-
-}
-
-ul.socials-list li a {
-  margin: 10px;
-}
-
-ul.socials-list li a img {
-  display: block;
-}
-
-.instagram_logo_2_invert {
-  filter: invert();
 }
 
 /* main */
@@ -285,51 +224,6 @@ main {
   width: 100%;
 }
 
-/* tour */
-.events-wrapper {
-  border-top: white 1px solid;
-}
-
-.event {
-  border-bottom: white 1px solid;
-  border-collapse: separate;
-  display: flex;
-  justify-content: space-between;
-}
-
-.event-details-wrapper {
-}
-
-.event-detail {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.event-tickets {
-  display: flex;
-  align-items: center;
-}
-
-a.ticket-link {
-  width: 64.43px;
-}
-
-input.ticket-button {
-  background-color: black;
-  border: solid white 1px;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-}
-
-.ticket-button:hover {
-  background-color: darkgrey;
-  cursor: pointer;
-}
-
-.tourbox-wrapper {
-  display: none;
-}
 
 /* Konzept */
 
@@ -345,43 +239,6 @@ p.konzept {
 .music-wrapper {
 }
 
-.streaming-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.spotify-wrapper {
-  padding: 5px;
-  height: 400px;
-}
-
-.spotify-window {
-  height: 100%;
-  width: 100%;
-}
-
-.tidal-wrapper {
-  padding: 5px;
-  height: 400px;
-}
-
-.tidal-window{
-  height: 400px;
-}
-
-.youtube-wrapper {
-  margin-top: 50px;
-  position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;
-
-}
-
-.youtube-window {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  display: block;
-  margin: 0 auto;
-}
 
 /* anmelden */
 .anmelden {
@@ -474,27 +331,6 @@ p.imp {
   margin
   height: auto;
 }
-
-/*.overlay{
-    border: solid white 2px;
-    display: block;
-    height: 300px;
-    width: 300px;
-    margin: 20px;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #008CBA;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    
-}*/
 
 .overlay {
   position: absolute;
