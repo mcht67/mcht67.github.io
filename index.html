@@ -27,6 +27,23 @@
       display: block;
       margin-bottom: 10px;
     }
+    select {
+    display: block;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    margin: 0 auto 1em auto;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border 0.3s ease;
+  }
+
+  select:hover,
+  select:focus {
+    border-color: #007acc;
+    outline: none;
+  }
   </style>
 </head>
 <body>
@@ -35,27 +52,58 @@
   <div id="samples"></div>
 
   <script>
-    // List your sample IDs here (or generate this list via Python)
-    const sampleIds = Array.from(Array(14).keys());
+    const polyphonyLevels = [1, 2, 3, 4, 5, 6, 7]; // adjust to your number of levels
+    const exampleIds = [0, 1, 2];         // same for each level
 
-    const container = document.getElementById('samples');
+    const samplesDiv = document.getElementById("samples");
 
-    sampleIds.forEach(id => {
-      const div = document.createElement('div');
-      div.className = 'sample';
+    polyphonyLevels.forEach(poly => {
+      const sampleDiv = document.createElement("div");
+      sampleDiv.className = "sample";
 
-      div.innerHTML = `
-        <div class="media">
-          <img src="images/spectrogram_${id}.png" alt="Spectrogram for ${id}" class="spectrogram">
-          <audio controls src="audio/audio_${id}.wav"></audio>
-        </div>
-      `;
+      const title = document.createElement("h3");
+      title.textContent = `Polyphony Degree ${poly}`;
 
-      container.appendChild(div);
+      const select = document.createElement("select");
+      exampleIds.forEach(ex => {
+        const option = document.createElement("option");
+        option.value = ex;
+        option.textContent = `Example ${ex}`;
+        select.appendChild(option);
+      });
+
+      const mediaDiv = document.createElement("div");
+      mediaDiv.className = "media";
+
+      const image = document.createElement("img");
+      image.className = "spectrogram";
+
+      const audio = document.createElement("audio");
+      audio.controls = true;
+
+      // Function to update audio/image
+      function updateMedia(exampleId) {
+        const basePath = `polyphony_${poly}`;
+        image.src = `images/${basePath}/spectrogram_${exampleId}.png`;
+        image.alt = `Spectrogram poly ${poly} ex ${exampleId}`;
+        audio.src = `audio/${basePath}/audio_${exampleId}.wav`;
+      }
+
+      // Set initial values
+      updateMedia(exampleIds[0]);
+
+      // Hook up dropdown
+      select.addEventListener("change", () => {
+        updateMedia(select.value);
+      });
+
+      mediaDiv.appendChild(select);
+      mediaDiv.appendChild(image);
+      mediaDiv.appendChild(audio);
+      sampleDiv.appendChild(title);
+      sampleDiv.appendChild(mediaDiv);
+      samplesDiv.appendChild(sampleDiv);
     });
   </script>
-
-  <!-- Add more samples manually as needed -->
-
 </body>
 </html>
