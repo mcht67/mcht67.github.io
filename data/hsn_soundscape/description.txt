@@ -1,0 +1,49 @@
+<h2>High Sierras Soundscape Dataset</h2>
+<p>
+  This dataset is based on the soundscape recordings from the High Sierras dataset, provided by 
+  <a href="https://github.com/DBD-research-group/BirdSet">BirdSet</a>.
+</p>
+<p>
+  BirdSet offers 5-second segments extracted from the High Sierras soundscape. 
+  The dataset consists 12,000 segments across 21 bird species.
+</p>
+<p>
+  For digital signal processing, 
+  <a href="https://pyfar.readthedocs.io/en/stable/pyfar.html">Pyfar</a> is used.
+</p>
+
+<h3>Polyphony Degree Selection</h3>
+<p>
+  A polyphony degree (up to 7) is selected pseudo-randomly from a predefined set. 
+  Once chosen, the degree is removed from the set. When the set is empty, it is reset.
+</p>
+
+<h3>Raw Files</h3>
+<p>
+  Soundscape files with no annotated species tag are discared.
+  No normalization is applied at this stage.
+</p>
+
+<h3>Mixing</h3>
+<p>
+  Each audio segment may include multiple species tags. While summing signals in the time domain, 
+  species tags are accumulated. Mixing stops once the number of species tags equals or exceeds 
+  the selected polyphony degree. The list of species tags may contain duplicates. This process repeats until all files have been used once.
+</p>
+
+<h3>Normalization</h3>
+<p>
+  The resulting mixed signal is normalized to full scale.
+</p>
+
+<h3>Annotations</h3>
+<p>
+  Each mixed signal is annotated with:
+  <ul>
+    <li>A polyphony map indicating the polyphony degree for each of the 21 species and the total polyphony degree</li>
+    <li>A list of the raw audio files used</li>
+    <li>A list of species tags included in the mix (may contain duplicates, reflecting the polyphony degree)</li>
+  </ul>
+</p>
+
+<p>To enhance the listening experience raw audio files have been normalized for playback on this  site.</p>

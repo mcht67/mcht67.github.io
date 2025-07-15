@@ -1,0 +1,47 @@
+<h2>High Sierras Xeno Canto Dataset</h2>
+<p>
+  This dataset is based on the Xeno-Canto subset of the High Sierras dataset, provided by 
+  <a href="https://github.com/DBD-research-group/BirdSet">BirdSet</a>.
+</p>
+<p>
+  The subset consists of 5,460 focal recordings across 21 bird species.
+</p>
+<p>
+  For digital signal processing, 
+  <a href="https://pyfar.readthedocs.io/en/stable/pyfar.html">Pyfar</a> is used.
+</p>
+
+<h3>Raw Files</h3>
+<p>
+  From each raw file, the first 5 seconds are extracted using only the first audio channel. 
+  No normalization is applied at this stage.
+</p>
+
+<h3>Polyphony Degree Selection</h3>
+<p>
+  A polyphony degree (up to 7) is chosen pseudo-randomly from a predefined set. 
+  Once a degree is selected, it is removed from the set. When the set is empty, it is reset.
+</p>
+
+<h3>Mixing</h3>
+<p>
+  Audio signals are summed in the time domain until the number of tracks equals the selected polyphony degree. This process gets repeated until all files have been used once.
+</p>
+
+<h3>Normalization</h3>
+<p>
+  The mixed signal is normalized to full scale.
+</p>
+
+<h3>Annotations</h3>
+<p>
+  Each mixed signal is annotated with:
+  <ul>
+    <li>A polyphony map showing the number of contributing files for each of the 21 species and totale polyphony degree</li>
+    <li>A list of the raw audio files used</li>
+    <li>A list of species tags included in the mix (may contain duplicates, reflecting the polyphony degree)</li>
+  </ul>
+</p>
+
+
+<p>To enhance the listening experience raw audio files have been normalized for playback on this  site.</p>

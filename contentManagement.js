@@ -4,6 +4,30 @@ const polyphonyLevels = [1, 2, 3, 4, 5, 6, 7];
 
     const samplesDiv = document.getElementById("samples");
     const datasetSelect = document.getElementById("datasetSelect");
+    const description = document.getElementById('description');
+
+    function renderDatasetDescription(dataset) {
+
+      description.innerHTML = "";
+
+       // Fetch and insert the text file content
+      path = `data/${dataset}/description.txt`;
+      console.log(path);
+      fetch(path)
+        .then(response => {
+          if (!response.ok) {
+            description.textContent = "No description available."
+            throw new Error('Text file not found or could not be loaded.');
+          }
+          return response.text();
+        })
+        .then(data => {
+          description.innerHTML = data;
+        })
+        .catch(error => {
+          description.textContent = "No description available.";
+        });
+    }
 
     function renderSamples(dataset) {
       samplesDiv.innerHTML = "";  // clear old content
@@ -111,8 +135,10 @@ const polyphonyLevels = [1, 2, 3, 4, 5, 6, 7];
 
     // Initial load
     renderSamples(datasetSelect.value);
+    renderDatasetDescription(datasetSelect.value);
 
     // Change dataset
     datasetSelect.addEventListener("change", () => {
       renderSamples(datasetSelect.value);
+      renderDatasetDescription(datasetSelect.value);
     });
