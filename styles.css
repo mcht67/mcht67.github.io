@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2em;
+  background: #f9f9f9;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.sample {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  margin-bottom: 3em;
+  border: 1px solid #ddd;
+  padding: 1.5em;
+  max-width: 900px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.media {
+  text-align: center;
+  width: 100%;
+}
+
+.spectrogram, .raw-spectrogram {
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 0.5em;
+}
+
+select {
+  font-size: 1.1em;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  width: 80%;
+  max-width: 300px;
+}
+
+select:hover,
+select:focus {
+  border-color: #007acc;
+  outline: none;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 1em;
+  grid-column: span 2;
+}
+
+.dataset-select-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+  font-size: 1.1em;
+}
+
+.dataset-select-wrapper select {
+  margin-left: 1em;
+  font-size: 1em;
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.raw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1em;
+  width: 100%;
+}
+
+.raw-audio-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.raw-audio-wrapper audio {
+  width: 100%;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.raw-label {
+  margin-top: 0.3em;
+  color: #555;
+  text-align: center;
+}
