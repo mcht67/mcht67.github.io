@@ -133,6 +133,23 @@ const polyphonyLevels = [1, 2, 3, 4, 5, 6, 7];
       });
     }
 
+const buttons = document.querySelectorAll(".tab-btn");
+const contents = document.querySelectorAll(".tab-content");
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Toggle active button
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Show relevant content
+    const target = btn.dataset.tab;
+    contents.forEach(c => {
+      c.classList.toggle("active", c.id === target);
+    });
+  });
+});
+
     // Initial load
     renderSamples(datasetSelect.value);
     renderDatasetDescription(datasetSelect.value);

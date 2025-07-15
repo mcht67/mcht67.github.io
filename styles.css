@@ -132,3 +132,48 @@ h3 {
   color: #555;
   text-align: center;
 }
+
+.tab-container {
+  max-width: 900px;
+  margin: 0 auto 2em auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  background: #f0f0f0;
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 1em;
+  font-size: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tab-buttons button:hover {
+  background: #e6f2ff;
+}
+
+.tab-buttons button.active {
+  background: white;
+  border-bottom: 3px solid #007acc;
+  color: #007acc;
+  font-weight: bold;
+}
+
+.tab-content {
+  display: none;
+  padding: 2em;
+}
+
+.tab-content.active {
+  display: block;
+}

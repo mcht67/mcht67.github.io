@@ -9,10 +9,6 @@
 
   <h1>Polyphonic Bird Call Dataset</h1>
 
-  <div id="datasetDescription">
-    <div id="description"></div>
-  </div>
-
   <div class="dataset-select-wrapper">
     <label for="datasetSelect">Select Dataset:</label>
     <select id="datasetSelect">
@@ -22,9 +18,16 @@
     </select>
   </div>
 
+  <div class="tab-buttons">
+    <button class="tab-btn" data-tab="datasetDescription">Description</button>
+    <button class="tab-btn active" data-tab="samples">Examples</button>
+  </div>
 
+  <div id="datasetDescription" class="tab-content">
+    <div id="description"></div>
+  </div>
 
-  <div id="samples"></div>
+  <div id="samples" class="tab-content active"></div>
 
 <script type="text/javascript" src="contentManagement.js"></script>
 
