@@ -64,7 +64,7 @@ const polyphonyLevels = [1, 2, 3, 4, 5, 6, 7];
           `data/${dataset}/polyphony_${poly}/example_${exampleId}`;
 
         function updateMedia(exampleId) {
-          image.src = `${basePath(exampleId)}/images/mix_spectrogram.png`;
+          image.src = `${basePath(exampleId)}/images/mix_mel_spectrogram.png`;
           image.alt = `Spectrogram poly ${poly} example ${exampleId}`;
           audio.src = `${basePath(exampleId)}/audio/mix_audio.wav`;
         }
@@ -96,7 +96,7 @@ const polyphonyLevels = [1, 2, 3, 4, 5, 6, 7];
 
             const rawImage = document.createElement("img");
             rawImage.className = "raw-spectrogram";
-            rawImage.src = `${basePath(exampleId)}/images/raw_spectrogram_${rawId}.png`;
+            rawImage.src = `${basePath(exampleId)}/images/raw_mel_spectrogram_${rawId}.png`;
             rawImage.alt = `Raw spectrogram ${rawId}`;
 
             const rawAudio = document.createElement("audio");
