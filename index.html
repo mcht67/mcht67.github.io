@@ -27,7 +27,18 @@
     <div id="description"></div>
   </div>
 
-  <div id="samples" class="tab-content active"></div>
+ <div id="samples" class="tab-content active">
+    <div class="processing-wrapper">
+      <label for="processingSelect">Processing:</label>
+      <div class="select-wrapper">
+        <select id="processingSelect">
+          <option value="">None</option>
+          <option value="_denoised">Denoising</option>
+        </select>
+      </div>
+    </div>
+</div>
+
 
 <script type="text/javascript" src="contentManagement.js"></script>
 
